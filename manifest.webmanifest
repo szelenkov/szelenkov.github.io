@@ -1,49 +1,60 @@
 {
-    "background_color": "#3bf8ff",
-    "categories": [
-        "books", "business", "education", "entertainment", "finance", "navigation", "news",
-        "personalization", "photo", "productivity", "security", "social", "utilities"
-    ],
-    "description": "Serhiy`s Personal Website",
-    "dir": "ltr",
-    "display": "standalone",
-    "icons": [
-        {
-            "src": "/images/android-icon-36x36.png",
-            "sizes": "36x36",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/android-icon-48x48.png",
-            "sizes": "48x48",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/android-icon-72x72.png",
-            "sizes": "72x72",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/android-icon-96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/android-icon-144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/android-icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ],
-    "lang": "en",
-    "name": "Serhiy Zelenkov",
-    "orientation": "portrait-primary",
-    "prefer_related_applications": true,
-    "short_name": "Serg`s page",
-    "start_url": ".",
-    "theme_color": "#3bf8ff"
+  "background_color": "#3bf8ff",
+  "categories": [
+    "books",
+    "business",
+    "education",
+    "entertainment",
+    "finance",
+    "navigation",
+    "news",
+    "personalization",
+    "photo",
+    "productivity",
+    "security",
+    "social",
+    "utilities"
+  ],
+  "description": "Serhiy`s Personal Website",
+  "dir": "ltr",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "36x36",
+      "src": "/images/android-icon-36x36.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "48x48",
+      "src": "/images/android-icon-48x48.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "72x72",
+      "src": "/images/android-icon-72x72.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "96x96",
+      "src": "/images/android-icon-96x96.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "144x144",
+      "src": "/images/android-icon-144x144.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "192x192",
+      "src": "/images/android-icon-192x192.png",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en",
+  "name": "Serhiy Zelenkov",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": true,
+  "short_name": "Serg`s page",
+  "start_url": ".",
+  "theme_color": "#3bf8ff"
 }

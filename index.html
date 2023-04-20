@@ -1,42 +1,44 @@
-
-<!doctype html>
-<html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta  name="viewport" content="width=device-width, initial-scale=1" />
-    <title>New Tab</title>
-    <script type="module" src="new_tab_page.js"></script>
-    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
-    <link rel="stylesheet" href="chrome://theme/colors.css?sets=ui,chrome">
-    <link rel="stylesheet" href="shared_vars.css">
-    <style>
-      body {
-        background: #FFFFFF;
-        margin: 0;
-      }
-
-      #backgroundImage {
-        border: none;
-        height: 100%;
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        visibility: hidden;
-        width: 100%;
-      }
-
-      [show-background-image] #backgroundImage {
-        visibility: visible;
-      }
-    </style>
-    <script>
-    function getVal() {
-   const reaEl  = document.getElementById("radius");
-   alert(reaEl.innerHTML);
-    }
-     </script>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Serhiy Zelenkov" />
+    <meta name="description" content="Serhiy`s Personal Website" />
+    <meta name="keywords" content="back-end, developer, engineer, Serhiy Zelenkov, web, HTML, CSS, JavaScript, jQuery, Java, Python, Nodejs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Serhiy Zelenkov</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/hover.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js"></script>
+    <script type="text/javascript" crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.js"></script>
+</head>
+<body>
     <form>
       <label for="radius" class="control-label:control">Radius</label>
       <input type="number" id="raduis" onkeyup="getVal()" title="radius" />
