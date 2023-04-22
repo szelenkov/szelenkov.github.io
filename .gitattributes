@@ -1,60 +1,199 @@
-# Handle line endings automatically for files detected as text
-# and leave all files detected as binary untouched.
+## GITATTRIBUTES FOR WEB PROJECTS
+#
+# These settings are for any web project.
+#
+# Details per file setting:
+#   text    These files should be normalized (i.e. convert CRLF to LF).
+#   binary  These files are binary and should be left untouched.
+#
+# Note that binary is a macro for -text -diff.
+######################################################################
+
+# Auto detect
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched.
+##   This will handle all files NOT defined below.
 *               text=auto
 
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert crlf => lf)
-*.gitattributes text export-ignore linguist-language=gitattributes
-.gitignore      text export-ignore
-*.md            text linguist-detectable diff=markdown
-
-# Force batch scripts to always use CRLF line endings so that if a repo is accessed
-# in Windows via a file share from Linux, the scripts will work.
-*.{cmd,[cC][mM][dD]} text eol=crlf
+# Source code
+*.bash          text eol=lf
 *.{bat,[bB][aA][tT]} text eol=crlf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.coffee        text
+*.css           text diff=css
+*.htm           text diff=html
+*.html          text diff=html
+*.inc           text
+*.ini           text
+*.js            text
+*.mjs           text
+*.cjs           text
+*.json          text
+*.jsx           text
+*.less          text
+*.ls            text
+*.map           text -diff
+*.od            text
+*.onlydata      text
+*.php           text diff=php
+*.pl            text
+*.ps1           text eol=crlf
+*.py            text diff=python
+*.rb            text diff=ruby
+*.sass          text
+*.scm           text
+*.scss          text diff=css
+*.sh            text eol=lf
+.husky/*        text eol=lf
+*.sql           text
+*.styl          text
+*.tag           text
+*.ts            text
+*.tsx           text
+*.xml           text
+*.xhtml         text diff=html
 
-# Force bash scripts to always use LF line endings so that if a repo is accessed
-# in Unix via a file share from Windows, the scripts will work.
-*.sh text eol=lf
+# Docker
+Dockerfile      text
 
-###############################
-# Git Large File System (LFS) #
-###############################
+# Documentation
+*.ipynb         text eol=lf
+*.markdown      text diff=markdown
+*.md            text linguist-detectable diff=markdown
+*.mdwn          text diff=markdown
+*.mdown         text diff=markdown
+*.mkd           text diff=markdown
+*.mkdn          text diff=markdown
+*.mdtxt         text
+*.mdtext        text
+*.txt           text
+AUTHORS         text
+CHANGELOG       text
+CHANGES         text
+CONTRIBUTING    text
+COPYING         text
+copyright       text
+*COPYRIGHT*     text
+INSTALL         text
+license         text
+LICENSE         text
+NEWS            text
+readme          text
+*README*        text
+TODO            text
+
+# Templates
+*.dot           text
+*.ejs           text
+*.erb           text
+*.haml          text
+*.handlebars    text
+*.hb[st]        text
+*.jade          text
+*.latte         text
+*.mustache      text
+*.njk           text
+*.phtml         text
+*.svelte        text
+*.tmpl          text
+*.tpl           text
+*.twig          text
+*.vue           text
+
+# Configs
+*.cnf             text
+*.conf            text
+*.config          text
+.editorconfig     text
+.env              text
+.gitattributes    text export-ignore linguist-language=gitattributes
+.gitconfig        text
+.gitignore        text export-ignore
+.htaccess         text
+*.lock            text -diff
+package.json      text eol=lf
+package-lock.json text eol=lf -diff
+pnpm-lock.yaml    text eol=lf -diff
+.prettierrc       text
+yarn.lock         text -diff
+*.toml            text
+*.yaml            text
+*.yml             text
+browserslist      text
+Makefile          text
+makefile          text
+# Fixes syntax highlighting on GitHub to allow comments
+tsconfig.json     linguist-language=JSON-with-Comments
+
+# Heroku
+Procfile          text
+
+# Graphics
+*.ai              binary
+*.bmp             binary
+*.eps             binary
+*.[gt]if          binary
+*.gifv            binary
+*.ico             binary
+*.jng             binary
+*.jp[2gx]         binary
+*.jpeg            binary
+*.jxr             binary
+*.pdf             binary
+*.png             binary
+*.ps[bd]          binary
+# SVG treated as an asset (binary) by default.
+*.svg             text
+*.svgz            binary
+*.tiff            binary
+*.wbmp            binary
+
+# Audio
+*.m4a             binary
+*.mid             binary
+*.midi            binary
+*.ogg             binary
+*.ra              binary
+
+# Video
+*.3gpp            binary
+*.3gp             binary
+*.as              binary
+*.as[fx]          binary
+*.avi             binary
+*.fl[av]          binary
+*.m[4o]v          binary
+*.mng             binary
+*.mpeg            binary
+*.mp[34g]          binary
+*.ogv             binary
+*.sw[cf]          binary
+*.web[pm]            binary
 
 # Archives
-*.[7g]z filter=lfs diff=lfs merge=lfs -text
-*.b[rz] filter=lfs diff=lfs merge=lfs -text
-*.tar filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
-
-# Documents
-*.do[ct] diff=astextplain
-*.DO[CT] diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.rtf diff=astextplain
-*.RTF diff=astextplain*.pdf filter=lfs diff=lfs merge=lfs -text
-*.PDF filter=lfs diff=lfs merge=lfs -text
-
-# Images
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.ico filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.webp filter=lfs diff=lfs merge=lfs -text
+*.[7g]z           binary
+*.[kjrt]ar         binary
+*.zip             binary
 
 # Fonts
-*.woff filter=lfs diff=lfs merge=lfs -text
-*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.ttf             binary
+*.eot             binary
+*.otf             binary
+*.woff            binary
+*.woff2           binary
 
-# Other
-*.exe filter=lfs diff=lfs merge=lfs -text
+# Executables
+*.exe             binary
+*.pyc             binary
+# Prevents massive diffs caused by vendored, minified files
+**/.yarn/releases/**   binary
+**/.yarn/plugins/**    binary
 
-# Custom for Visual Studio
-*.cs diff=csharp
-*.sln merge=union
-*.[cf]sproj merge=union
-*.[dv]bproj merge=union
+# RC files (like .babelrc or .eslintrc)
+*.*rc             text
+
+# Ignore files (like .npmignore or .gitignore)
+*.*ignore         text
+
+# Prevents massive diffs from built files
+dist/*            binary
