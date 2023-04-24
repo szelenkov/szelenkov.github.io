@@ -165,14 +165,14 @@ Procfile          text
 *.m[4o]v          binary
 *.mng             binary
 *.mpeg            binary
-*.mp[34g]          binary
+*.mp[34g]         binary
 *.ogv             binary
 *.sw[cf]          binary
-*.web[pm]            binary
+*.web[pm]         binary
 
 # Archives
 *.[7g]z           binary
-*.[kjrt]ar         binary
+*.[kjrt]ar        binary
 *.zip             binary
 
 # Fonts
