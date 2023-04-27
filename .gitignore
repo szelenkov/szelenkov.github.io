@@ -34,4 +34,6 @@ local_settings.py
 
 # Pyre type checker
 .pyre/
+.mypy_cache/
 .idea/
+.pydevproject
