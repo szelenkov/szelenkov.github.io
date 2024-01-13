@@ -1,0 +1,11 @@
+{
+    "name": "Serhiy Zelenkov",
+    "short_name": "Serhiy's Personal Website",
+    "start_url": ".",
+    "display": "minimal-ui",
+    "background_color": "#3bf8ff",
+    "theme_color": "#3bf8ff",
+    "description": "Serhiy's Personal Website",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false
+}
