@@ -5,6 +5,12 @@
  width="380.000000pt" height="380.000000pt" viewBox="0 0 380.000000 380.000000"
  preserveAspectRatio="xMidYMid meet">
 
+<style type="">
+    @media (prefers-color-scheme: dark) {
+        path{fill: red;}
+    }
+</style>
+
 <g transform="translate(0,380) scale(0.1,-0.1)"
 fill="#908200" stroke="none">
 <path d="M1830 2753 c-201 -26 -403 -170 -490 -348 -51 -103 -70 -179 -70
