@@ -262,6 +262,14 @@ text_align_center {
   text-align: center;
 }
 
+width80_margin010 {
+  width:80%; margin:0% 10%;
+}
+
+padding_left40 {
+  padding-left:40%; padding-top:0;
+}
+
 @media screen and (max-width: 900px) {
   .content {
     padding-bottom: 30%;
