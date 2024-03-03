@@ -1,3 +1,3 @@
 # szelenkov.github.io
 
-Serg`s home page
+Serhiy`s home page
