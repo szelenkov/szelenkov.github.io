@@ -70,9 +70,9 @@ body {
 }
 
 img {
-  margin-left: 0px;
+  margin-left: 0;
   width: 100%;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .center {
@@ -96,23 +96,23 @@ img {
   color: inherit;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding: 20px 10% 0px 10%;
+  padding: 20px 10% 0 10%;
 }
 
 p {
   font-size: 120%;
   line-height: 160%;
   font-family: "Yantramanav", sans-serif;
-  padding: 20px 10% 0px 10%;
-  margin-left: 0px;
+  padding: 20px 10% 0 10%;
+  margin-left: 0;
 }
 
 .list {
   font-size: 120%;
   line-height: 160%;
   font-family: "Yantramanav", sans-serif;
-  padding: 0px 10% 0px 10%;
-  margin-left: 0px;
+  padding: 0 10% 0 10%;
+  margin-left: 0;
 }
 
 .no-gutter > [class*="col-"] {
@@ -170,11 +170,11 @@ p {
 }
 
 .contact-padding-l {
-  padding: 0px 200px;
+  padding: 0 200px;
 }
 
 .contact-padding-r {
-  padding: 0px 200px;
+  padding: 0 200px;
 }
 
 h3 {
@@ -208,7 +208,7 @@ h5 {
 .opaque-navbar {
   background-color: rgba(0, 0, 0, 0.5);
   height: 60px;
-  border-bottom: 0px;
+  border-bottom: 0;
   transition: background-color 0.5s ease 0s;
 }
 
@@ -242,31 +242,31 @@ td {
   opacity: 1;
 }
 
-white_color {
+.white_color {
   color: white;
 }
 
-black_color {
+.black_color {
   color: black;
 }
 
-padding010 {
+.padding010 {
   padding: 0 10%;
 }
 
-text_align_left {
+.text_align_left {
   text-align: left;
 }
 
-text_align_center {
+.text_align_center {
   text-align: center;
 }
 
-width80_margin010 {
-  width:80%; margin:0% 10%;
+.width80_margin010 {
+  width:80%; margin:0 10%;
 }
 
-padding_left40 {
+.padding_left40 {
   padding-left:40%; padding-top:0;
 }
 
@@ -307,7 +307,7 @@ padding_left40 {
   p {
     font-size: 120%;
     line-height: 100%;
-    padding: 20px 5% 0px 5%;
+    padding: 20px 5% 0 5%;
   }
   h2 {
     font-size: 130%;
@@ -340,10 +340,10 @@ padding_left40 {
     display: none;
   }
   .contact-padding-l {
-    padding: 0px 100px;
+    padding: 0 100px;
   }
   .contact-padding-r {
-    padding: 0px 100px;
+    padding: 0 100px;
   }
 }
 /* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
@@ -364,7 +364,7 @@ padding_left40 {
   p {
     font-size: 100%;
     line-height: 100%;
-    padding: 20px 40px 0px 40px;
+    padding: 20px 40px 0 40px;
   }
   h2.project-heading {
     font-size: 115%;
@@ -408,10 +408,10 @@ padding_left40 {
     margin: 50px 50px;
   }
   .contact-padding-l {
-    padding: 0px 60px;
+    padding: 0 60px;
   }
   .contact-padding-r {
-    padding: 0px 30px;
+    padding: 0 30px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -431,7 +431,7 @@ padding_left40 {
   p {
     font-size: 100%;
     line-height: 100%;
-    padding: 20px 20px 0px 20px;
+    padding: 20px 20px 0 20px;
   }
   h2 {
     font-size: 100%;

@@ -4,7 +4,7 @@
         "books", "business", "education", "entertainment", "finance", "navigation", "news",
         "personalization", "photo", "productivity", "security", "social", "utilities"
     ],
-    "description": "Serhiy's Personal Website",
+    "description": "Serhiy`s Personal Website",
     "dir": "ltr",
     "display": "standalone",
     "icons": [
@@ -43,7 +43,7 @@
     "name": "Serhiy Zelenkov",
     "orientation": "portrait-primary",
     "prefer_related_applications": true,
-    "short_name": "Serg's page",
+    "short_name": "Serg`s page",
     "start_url": ".",
     "theme_color": "#3bf8ff"
 }

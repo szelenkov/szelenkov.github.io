@@ -1,9 +1,9 @@
 $(function() {
     function onScrollInit( items, trigger ) {
         items.each( function() {
-            var osElement = $(this),
-            osAnimationClass = osElement.attr('data-os-animation'),
-            osAnimationDelay = osElement.attr('data-os-animation-delay');
+            const osElement = $(this),
+                osAnimationClass = osElement.attr('data-os-animation'),
+                osAnimationDelay = osElement.attr('data-os-animation-delay');
 
             osElement.css({
                 '-webkit-animation-delay':  osAnimationDelay,
@@ -11,7 +11,7 @@ $(function() {
                 'animation-delay':          osAnimationDelay
             });
 
-            var osTrigger = ( trigger ) ? trigger : osElement;
+            const osTrigger = trigger || osElement;
 
             osTrigger.waypoint(function() {
                 osElement.addClass('animated').addClass(osAnimationClass);
@@ -27,10 +27,10 @@ $(document).ready(function() {
     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
 
-        var target = this.hash;
-        var $target = $(target);
+        const target = this.hash;
+        const $target = $(target);
 
-        $('html, body').stop().animate({'scrollTop': $target.offset().top}, 900, 'swing');
+        $('html, body').stop().animate({'scrollTop': $target.offset().top}, 900);
     });
 });
 

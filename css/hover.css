@@ -1239,7 +1239,6 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   background-color: #2098D1;
-  background-color: #2098d1;
   color: white;
 }
 
@@ -1918,7 +1917,6 @@
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow;
@@ -1937,7 +1935,6 @@
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: background;
@@ -2495,7 +2492,6 @@
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow;
@@ -2531,7 +2527,7 @@
   height: 10px;
   width: 90%;
   opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+  background: -webkit-radial-gradient(center, 5e 40px, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
   /* W3C */
   -webkit-transition-duration: 0.3s;
@@ -2868,7 +2864,7 @@
   position: absolute;
   left: 1em;
   padding: 0 1px;
-  font-family: FontAwesome;
+  font-family: FontAwesome, serif;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-transition-duration: 0.1s;
@@ -3038,7 +3034,7 @@
 .hvr-icon-spin:before {
   content: "\f1b4";
   position: absolute;
-  left: 0em;
+  left: 0;
   padding: 0 1px;
   font-family: FontAwesome;
   -webkit-transition-duration: 1s;
@@ -3488,7 +3484,7 @@
 .hvr-icon-push:before {
   content: "\f1b4";
   position: absolute;
-  left: 0em;
+  left: 0;
   padding: 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
@@ -3674,7 +3670,7 @@
 .hvr-icon-float:before {
   content: "\f062";
   position: absolute;
-  right: 0em;
+  right: 0;
   padding: 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
