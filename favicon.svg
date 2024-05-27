@@ -3,9 +3,10 @@
  width="380.000000pt" height="380.000000pt" viewBox="0 0 380.000000 380.000000"
  preserveAspectRatio="xMidYMid meet">
 
-<style type="">
+ <style type="text/css">
     @media (prefers-color-scheme: dark) {
-        path{fill: red;}
+        g:first-of-type{fill: #908200;}
+        g:last-of-type{fill: #8d8484;}
     }
 </style>
 
