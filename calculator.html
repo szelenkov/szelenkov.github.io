@@ -52,11 +52,12 @@
       function init() {
         const buttons = document.getElementById("keys").getElementsByTagName("td");
         const result = document.getElementById("result");
-        for (var i = 0; i < buttons.length; i++) {
-          const self = buttons[i];
+        for (const element of buttons) {
+          const self = element;
           self.addEventListener("click", function () {
             const operation = document.getElementById("operation");
             const shift = document.getElementById("shift");
+            let newResult = result.value;
             switch (this.innerText) {
               case "C":
                 result.value = "0";
@@ -68,7 +69,6 @@
               case "x":
               case "/":
               case "=":
-                let newResult = result.value;
                 if (operation.value !== "") {
                   newResult = Number(shift.value);
                   switch (operation.value) {
