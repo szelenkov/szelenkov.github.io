@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Yantramanav:100");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400");
-
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -34,24 +30,28 @@ body {
 }
 
 .content h1 {
-  font-family: "Yantramanav", sans-serif;
-  font-size: 550%;
+  font-family: 'Courier New', monospace;
+  font-size: 650%;
   font-weight: 100;
   color: #e1efe9;
   line-height: 70%;
   margin-bottom: 20px;
+  text-shadow: 4px 3px 0 #7A7A7A;
 }
 
 .content h2 {
   font-family: "Yantramanav", sans-serif;
-  font-size: 200%;
+  font-size: 300%;
   font-weight: 100;
   color: #e1efe9;
   line-height: 70%;
   margin: 50px;
+  text-shadow: 4px 3px 0 #7A7A7A;
 }
 
 .btn {
+  cursor: pointer;
+  position: relative;
   font-family: "Montserrat", sans-serif;
   font-size: 135%;
   font-weight: 400;
@@ -61,12 +61,41 @@ body {
   border: solid #c09a1d;
   padding: 10px 20px;
   border-radius: 9px;
-  transition: all 0.5s;
-}
-
-.btn:hover {
-  color: #cbdfd6;
-  border: solid #cbdfd6 2px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: all 1s;
+  &:after,
+  &:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+  }
+  &:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+  }
+  &:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+  }
+  &:hover {
+    color: #cbdfd6;
+    border: solid #cbdfd6 1px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    &:before,
+    &:after {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 img {
@@ -163,10 +192,9 @@ p {
   top: 30px;
   right: 200px;
   cursor: pointer;
-}
-
-.close-btn-s:hover {
-  opacity: 0.3;
+  &:hover {
+    opacity: 0.3;
+  }
 }
 
 .contact-padding-l {
@@ -174,19 +202,11 @@ p {
 }
 
 .contact-padding-r {
+  white-space: nowrap;
   padding: 0 200px;
 }
 
-h3 {
-  padding: 5% 10% 0 10%;
-  margin-left: 0;
-}
-
-h4 {
-  padding: 5% 10% 0 10%;
-  margin-left: 0;
-}
-h5 {
+h3, h4, h5 {
   padding: 5% 10% 0 10%;
   margin-left: 0;
 }
@@ -200,6 +220,10 @@ h5 {
 .navbar {
   border: 0;
   font-size: 16px;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
 }
 
 .nav-btn:hover {
@@ -222,9 +246,7 @@ ul.dropdown-menu {
   background-color: black;
 }
 
-table,
-th,
-td {
+table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -263,17 +285,20 @@ td {
 }
 
 .width80_margin010 {
-  width:80%; margin:0 10%;
+  width: 80%;
+  margin: 0 10%;
 }
 
 .padding_left40 {
-  padding-left:40%; padding-top:0;
+  padding-left: 40%;
+  padding-top: 0;
 }
 
 @media screen and (max-width: 900px) {
   .content {
     padding-bottom: 30%;
   }
+
   .content h1 {
     font-size: 450%;
   }
@@ -285,45 +310,48 @@ td {
     font-size: 130%;
     padding: 9px 17px;
   }
+
   .project-heading {
     font-size: 200%;
   }
 }
-/* Smartphones (landscape) ----------- */
+/* Smartphones (landscape) */
 @media screen and (max-width: 768px) {
   .content {
     padding-bottom: 40%;
   }
+
   .content h1 {
     font-size: 300%;
   }
+
   .content h2 {
     font-size: 150%;
   }
+
   .btn {
     font-size: 110%;
     padding: 7px 15px;
   }
+
   p {
     font-size: 120%;
     line-height: 100%;
     padding: 20px 5% 0 5%;
   }
+
   h2 {
     font-size: 130%;
   }
-  h3 {
+
+  h3, h4, h5 {
     font-size: 150%;
   }
-  h4 {
-    font-size: 150%;
-  }
-  h5 {
-    font-size: 150%;
-  }
+
   .project-heading {
     font-size: 150%;
   }
+
   .portfolio-image-r {
     width: 90%;
   }
@@ -343,6 +371,7 @@ td {
     padding: 0 100px;
   }
   .contact-padding-r {
+    white-space: nowrap;
     padding: 0 100px;
   }
 }
@@ -373,15 +402,7 @@ td {
   h2.heading {
     padding-left: 40px;
   }
-  h3 {
-    padding-left: 40px;
-    font-size: 100%;
-  }
-  h4 {
-    padding-left: 40px;
-    font-size: 100%;
-  }
-  h5 {
+  h3, h4, h5 {
     padding-left: 40px;
     font-size: 100%;
   }
@@ -389,6 +410,7 @@ td {
     font-size: 100%;
   }
   .portfolio-image-r {
+    white-space: nowrap;
     width: 70%;
   }
   .portfolio-image-l {
@@ -411,6 +433,7 @@ td {
     padding: 0 60px;
   }
   .contact-padding-r {
+    white-space: nowrap;
     padding: 0 30px;
   }
 }
@@ -443,15 +466,7 @@ td {
   h2.heading {
     padding-left: 20px;
   }
-  h3 {
-    padding-left: 20px;
-    font-size: 100%;
-  }
-  h4 {
-    padding-left: 20px;
-    font-size: 100%;
-  }
-  h5 {
+  h3, h4, h5 {
     padding-left: 20px;
     font-size: 100%;
   }
@@ -459,6 +474,7 @@ td {
     font-size: 100%;
   }
   .portfolio-image-r {
+    white-space: nowrap;
     width: 70%;
   }
   .portfolio-image-l {
