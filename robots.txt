@@ -1,0 +1,19 @@
+User-agent: *               # all robots rules
+Disallow: /cgi-bin          # cgi default
+Disallow: /?                # all params from main
+Disallow: *?s=              # search
+Disallow: *&s=              # search
+Allow: /js/*.js
+Allow: /css/*.css
+Allow: /images/*.png
+Allow: /images/*.jpg
+Allow: /images/*.jpeg
+Allow: /images/*.gif
+Allow: /*.svg
+Allow: /images/*.pdf
+# Site map
+Sitemap: https://szelenkov.github.io/sitemap.xml
+# Site map compressed
+#Sitemap: http://szelenkov.github.io/sitemap.xml.gz
+# Site main mirror
+Host: szelenkov.github.io
