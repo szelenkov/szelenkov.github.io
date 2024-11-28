@@ -1,132 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Calculator css</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
     <style>
-      * {text-align: center}
-      input {text-align: right}
-      table, td {border-radius: 5px}
-      table {
-        border-spacing: 5px;
-        border-radius: 10px;
-        border: 2px groove gray;
-        width: 230px;
-        height: 270px;
-        margin: auto;
-      }
-      .head .type {
-        font-size: 20px;
-        letter-spacing: 3px;
-        color: white;
-        border: 1px solid lightgrey;
-        background-color: black;
-        padding-left: 10px;
-        text-align: left;
-        border-radius: 5px;
-        height: 55px;
-      }
-      .head1 > td {
-        color: white;
-        background-color: gray;
-      }
-      .head2 td {
-        background-color: lightgray;
-      }
-      .head2 .ans {
-        background-color: coral;
-      }
-      table td:hover {
-        background-color: black;
-        color: white;
-      }
-      .head2 > .ans:hover {
-        background-color: red;
-        color: white;
-      }
-    </style>
-    <script type="text/javascript">
-      //<![CDATA[
-      let lastButtonClass = "";
-      function init() {
-        const buttons = document.getElementById("keys").getElementsByTagName("td");
-        const result = document.getElementById("result");
-        for (const element of buttons) {
-          const self = element;
-          self.addEventListener("click", function () {
-            const operation = document.getElementById("operation");
-            const shift = document.getElementById("shift");
-            let newResult = result.value;
-            switch (this.innerText) {
-              case "C":
-                result.value = "0";
-                operation.value = "";
-                shift.value = "0";
-                break;
-              case "+":
-              case "-":
-              case "x":
-              case "/":
-              case "=":
-                if (operation.value !== "") {
-                  newResult = Number(shift.value);
-                  switch (operation.value) {
-                    case "+": newResult += Number(result.value); break;
-                    case "-": newResult -= Number(result.value); break;
-                    case "x": newResult *= Number(result.value); break;
-                    case "/": newResult /= Number(result.value); break;
-                    default: newResult = Number(result.value); break;
-                  }
-                  result.value = "";
-                  operation.value = "";
-                  shift.value = "";
-                }
-                operation.value = this.innerText;
-                shift.value = result.value;
-                result.value = newResult;
-                break;
-              case ".":
-                if (result.value.indexOf(".") < 0)
-                  result.value += this.innerText;
-                break;
-              default:
-                if (
-                  result.value === "0" ||
-                  result.value == "Infinity" ||
-                  lastButtonClass != "head2" ||
-                  isNaN(result.value)
-                ) {
-                  if (lastButtonClass != "head2") shift.value = result.value;
-                  result.value = "";
-                }
-                result.value += this.innerHTML;
-                break;
-            }
-            lastButtonClass =
-              self.className === ""
-                ? self.parentElement.className
-                : self.className;
-          });
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-      }
-      //]]>
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+        }
+
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        .display {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: right;
+            position: relative;
+        }
+
+        #result {
+            font-size: 2em;
+            width: 100%;
+            border: none;
+            background: transparent;
+            color: #333;
+            text-align: right;
+            outline: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .operator {
+            background: #4dabf7;
+            color: white;
+        }
+
+        .operator:hover {
+            background: #339af0;
+        }
+
+        .equals {
+            background: #40c057;
+            color: white;
+            grid-row: span 2;
+        }
+
+        .equals:hover {
+            background: #37b24d;
+        }
+
+        .clear {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .clear:hover {
+            background: #fa5252;
+        }
+
+        .history {
+            color: #868e96;
+            font-size: 0.8em;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="history" id="history"></div>
+            <input type="text" id="result" readonly value="0">
+        </div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="handleOperator('/')">/</button>
+            <button class="operator" onclick="handleOperator('*')">×</button>
+            <button onclick="handleBackspace()">⌫</button>
+            
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="handleOperator('-')">-</button>
+            
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="handleOperator('+')">+</button>
+            
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="equals" onclick="calculate()">=</button>
+            
+            <button onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
+            <button onclick="appendDecimal()">.</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = '0';
+        let previousInput = '';
+        let operation = null;
+        let shouldResetScreen = false;
+
+        const resultDisplay = document.getElementById('result');
+        const historyDisplay = document.getElementById('history');
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        function handleKeyPress(e) {
+            e.preventDefault();
+            
+            if (e.key >= '0' && e.key <= '9') {
+                appendNumber(e.key);
+            } else if (e.key === '.') {
+                appendDecimal();
+            } else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
+                handleOperator(e.key);
+            } else if (e.key === 'Enter' || e.key === '=') {
+                calculate();
+            } else if (e.key === 'Escape') {
+                clearDisplay();
+            } else if (e.key === 'Backspace') {
+                handleBackspace();
+            }
+        }
+
+        function appendNumber(number) {
+            if (shouldResetScreen) {
+                currentInput = number;
+                shouldResetScreen = false;
+            } else {
+                currentInput = currentInput === '0' ? number : currentInput + number;
+            }
+            updateDisplay();
+        }
+
+        function appendDecimal() {
+            if (shouldResetScreen) {
+                currentInput = '0.';
+                shouldResetScreen = false;
+            } else if (!currentInput.includes('.')) {
+                currentInput += '.';
+            }
+            updateDisplay();
+        }
+
+        function handleOperator(op) {
+            if (operation !== null) {
+                calculate();
+            }
+            previousInput = currentInput;
+            operation = op;
+            shouldResetScreen = true;
+            updateHistory();
+        }
+
+        function calculate() {
+            if (operation === null || shouldResetScreen) return;
+
+            const prev = parseFloat(previousInput);
+            const current = parseFloat(currentInput);
+            let result;
+
+            switch (operation) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    if (current === 0) {
+                        alert('Cannot divide by zero');
+                        clearDisplay();
+                        return;
+                    }
+                    result = prev / current;
+                    break;
+            }
+
+            currentInput = result.toString();
+            operation = null;
+            shouldResetScreen = true;
+            historyDisplay.textContent = '';
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = '0';
+            previousInput = '';
+            operation = null;
+            shouldResetScreen = false;
+            historyDisplay.textContent = '';
+            updateDisplay();
+        }
+
+        function handleBackspace() {
+            if (currentInput.length === 1) {
+                currentInput = '0';
+            } else {
+                currentInput = currentInput.slice(0, -1);
+            }
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            resultDisplay.value = currentInput;
+        }
+
+        function updateHistory() {
+            historyDisplay.textContent = `${previousInput} ${operation}`;
+        }
     </script>
-  </head>
-  <body onload="init()">
-    <table id="keys">
-      <tr class="head">
-        <th colspan="4" class="type" style="text-align: center">
-          <input id="result" type="text" placeholder="Error" readonly value="0"/>
-          <input id="shift" type="hidden" value="0" />
-          <input id="operation" type="hidden" value="" />
-        </th>
-      </tr>
-      <tr class="head1"><td>+</td><td>-</td><td>x</td><td>/</td></tr>
-      <tr class="head2"><td>7</td><td>8</td><td>9</td><td rowspan="5" class="ans">=</td></tr>
-      <tr class="head2"><td>4</td><td>5</td><td>6</td></tr>
-      <tr class="head2"><td>1</td><td>2</td><td>3</td></tr>
-      <tr class="head2"><td>0</td><td>.</td><td>C</td></tr>
-    </table>
-  </body>
+</body>
 </html>
